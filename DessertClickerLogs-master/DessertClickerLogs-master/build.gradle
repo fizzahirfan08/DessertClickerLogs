@@ -1,0 +1,28 @@
+buildscript {
+    ext {
+        // Updated versions for compatibility with modern Android Studio
+        kotlin_version = '1.9.22'
+        navigationVersion = '2.7.7'
+        gradleVersion = '8.2.2'
+    }
+    repositories {
+        google()
+        mavenCentral() // jcenter is deprecated, use mavenCentral
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradleVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
